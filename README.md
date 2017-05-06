@@ -1,21 +1,21 @@
-# react-native-immersive
-Add Toggle for Android Immersive FullScreen Layout
+# react-native-detect-navbar-android
+Detect soft navigation bar for Android devices
 
-Note: this project is Android only, and Immersive Full-Screen Mode is first introduced since [Android 4.4 (API Level 19)](https://developer.android.com/training/system-ui/immersive.html)
+Note: this project is Android only(https://developer.android.com/training/system-ui/immersive.html)
 
 ## Installation Process
 
 * download this from npm
 
 ```bash
-npm install react-native-immersive --save
+npm install react-native-detect-navbar-android --save
 ```
 
 * Edit `android/settings.gradle`:
 
   ```diff
-  + include ':react-native-immersive'
-  + project(':react-native-immersive').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-immersive/android')
+  + include ':react-native-detect-navbar-android'
+  + project(':react-native-detect-navbar-android').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-detect-navbar-android/android')
   ```
 
 * Edit `android/app/build.gradle`:
@@ -25,14 +25,14 @@ npm install react-native-immersive --save
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"
-  + compile project(':react-native-immersive')
+  + compile project(':react-native-detect-navbar-android')
   }
   ```
 
 * Edit your `android/app/src/main/java/.../MainActivity.java`:
 
   ```diff
-  + import com.rndetectnavbarandroid.RNImmersivePackage;
+  + import import com.rndetectnavbarandroid.RNDetectNavbarAndroidPackage;
   ```
   
   ```diff
@@ -40,7 +40,7 @@ npm install react-native-immersive --save
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage()
-  +     , new RNImmersivePackage()
+  +     , new RNDetectNavbarAndroidPackage()
       );
     }
   ```
@@ -48,16 +48,18 @@ npm install react-native-immersive --save
 ## Usage
 
 ```js
-import Immersive from 'react-native-immersive';
+import DetectNavbar from 'react-native-detect-navbar-android';
 // or
-import {Immersive} from 'react-native-immersive';
+import {DetectNavbar} from 'react-native-detect-navbar-android';
 // or
-const Immersive = require('react-native-immersive');
+const DetectNavbar = require('react-native-detect-navbar-android');
 
 // methods (Android Only, don't call on iOS)
-Immersive.on();
-Immersive.setImmersive(true);
-
-Immersive.off();
-Immersive.setImmersive(false);
+DetectNavbar.hasSoftKey().then((bool) => {
+  if(bool) {
+    console.log('Has Soft NavBar');
+  } else {
+    console.log('Has Hard Key NavBar');
+  }
+});
 ```
