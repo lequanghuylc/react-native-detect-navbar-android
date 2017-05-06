@@ -1,7 +1,7 @@
 # react-native-detect-navbar-android
 Detect soft navigation bar for Android devices
 
-Note: this project is Android only(https://developer.android.com/training/system-ui/immersive.html)
+Note: this project is Android only
 
 ## Installation Process
 
