@@ -11,6 +11,8 @@ Note: this project is Android only
 npm install react-native-detect-navbar-android --save
 ```
 
+* Run `react-native link` or...
+
 * Edit `android/settings.gradle`:
 
   ```diff
@@ -29,7 +31,7 @@ npm install react-native-detect-navbar-android --save
   }
   ```
 
-* Edit your `android/app/src/main/java/.../MainActivity.java`:
+* Edit your `android/app/src/main/java/.../MainApplication.java`:
 
   ```diff
   + import import com.rndetectnavbarandroid.RNDetectNavbarAndroidPackage;
@@ -55,7 +57,7 @@ import {DetectNavbar} from 'react-native-detect-navbar-android';
 const DetectNavbar = require('react-native-detect-navbar-android');
 
 // methods (Android Only, don't call on iOS)
-DetectNavbar.hasSoftKey().then((bool) => {
+DetectNavbar.hasSoftKeys().then((bool) => {
   if(bool) {
     console.log('Has Soft NavBar');
   } else {
