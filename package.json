@@ -1,6 +1,6 @@
 {
   "name": "react-native-detect-navbar-android",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Detect soft navigation bar for Android devices",
   "main": "index.js",
   "scripts": {
