@@ -1,7 +1,7 @@
 # react-native-detect-navbar-android
-Detect soft navigation bar for Android devices
+Detect soft navigation bar for Android devices, so you'll know which one has physical keys (Home, Back, Menu) and which does not.
 
-Note: this project is Android only
+Note: this project is Android only, and it will not work if you use it to detect soft key being hidden. Pull Request is welcomed.
 
 ## Installation Process
 
